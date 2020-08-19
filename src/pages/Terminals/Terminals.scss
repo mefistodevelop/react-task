@@ -1,0 +1,13 @@
+.terminals {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 50rem;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+  }
+}
