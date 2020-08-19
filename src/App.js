@@ -1,22 +1,21 @@
 import React from 'react';
 import './App.scss';
+import { Route, Switch } from 'react-router-dom';
+import { Sidebar } from './components/Sidebar/Sidebar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App__sidebar">
+        <Sidebar />
+      </div>
+      <div className="App__content">
+        <Switch>
+          <Route path="/terminals" render={() => <h1>Terminals</h1>} />
+          <Route exact path="/buyers/" render={() => <h1>Buyers</h1>} />
+          <Route path="/buyers/:id" render={() => <h1>concrete buyer</h1>} />
+        </Switch>
+      </div>
     </div>
   );
 }
