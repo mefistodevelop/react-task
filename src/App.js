@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.scss';
 import { Route, Switch } from 'react-router-dom';
 import { Sidebar } from './components/Sidebar/Sidebar';
+import { Hamburger } from './components/common/Hamburger/Hamburger';
 
 function App() {
+  const [isVisible, setIsVisible] = useState(false);
+  const modificator = isVisible ? 'App__sidebar-wrapper_visible' : '';
+
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
+
   return (
     <div className="App">
-      <div className="App__sidebar">
-        <Sidebar />
+
+      <div className={`App__sidebar-wrapper ${modificator}`}>
+        <div className={`App__sidebar`}>
+          <Sidebar />
+        </div>
+        <Hamburger toggleVisibility={toggleVisibility} />
       </div>
       <div className="App__content">
         <Switch>

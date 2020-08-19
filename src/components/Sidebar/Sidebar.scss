@@ -1,0 +1,23 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 2rem 0;
+  height: 100%;
+
+  background-color: #fff;
+
+  &__avatar {
+    padding-left: 2rem;
+  }
+
+  &__footer {
+    text-align: center;
+  }
+}
+
+.avatar-large {
+  width: 10rem;
+  height: 10rem;
+}
