@@ -59,6 +59,12 @@ export function BuyersTable() {
           textAlign: 'center',
         },
       }}
+      localization={{
+        pagination: {
+          labelDisplayedRows: '{from}-{to} из {count}',
+          labelRowsSelect: 'строк',
+        },
+      }}
       components={{
         Pagination: (props) => (
           <TablePagination
