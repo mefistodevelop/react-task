@@ -6,6 +6,7 @@ import { Hamburger } from './components/common/Hamburger/Hamburger';
 import { Terminals } from './pages/Terminals/Terminals';
 import { TerminalsState } from './state/TerminalsState';
 import { Buyers } from './pages/Buyers/Buyers';
+import { Buyer } from './pages/Buyer/Buyer';
 import { BuyersState } from './state/BuyersState';
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
             <Switch>
               <Route path="/terminals" render={() => <Terminals />} />
               <Route exact path="/buyers/" render={() => <Buyers />} />
-              <Route path="/buyers/:id" render={() => <h1>concrete buyer</h1>} />
+              <Route path="/buyers/:id" render={() => <Buyer />} />
             </Switch>
           </main>
         </div>

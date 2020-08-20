@@ -122,9 +122,10 @@ const reducer = (state, action) => {
 
 export function BuyersState({ children }) {
   const [state] = useReducer(reducer, initialState);
+  const getBuyer = (id) => state.buyers.filter((buyer) => buyer.id === id);
 
   return (
-    <BuyersContext.Provider value={{ buyers: state.buyers }}>
+    <BuyersContext.Provider value={{ getBuyer, buyers: state.buyers }}>
       {children}
     </BuyersContext.Provider>
   );
