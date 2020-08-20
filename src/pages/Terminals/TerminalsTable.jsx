@@ -7,6 +7,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { useTerminals } from '../../state/TerminalsState';
 
 const useStyles = makeStyles({
   cell: {
@@ -16,8 +17,8 @@ const useStyles = makeStyles({
 
 export function TerminalsTable({ data }) {
   const rows = data;
-
   const classes = useStyles();
+  const { removeTerminal } = useTerminals();
 
   return (
     <TableContainer component={Paper}>
@@ -49,9 +50,7 @@ export function TerminalsTable({ data }) {
               <TableCell className={classes.cell} align="right">
                 <button
                   className="table__button"
-                  onClick={() => {
-                    alert(row.id);
-                  }}
+                  onClick={() => removeTerminal(row.id)}
                 >
                   &times;
                 </button>

@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import { Sidebar } from './components/Sidebar/Sidebar';
 import { Hamburger } from './components/common/Hamburger/Hamburger';
 import { Terminals } from './pages/Terminals/Terminals';
+import { TerminalsState } from './state/TerminalsState';
 
 function App() {
   const [isSidebarVisible, setIsVisible] = useState(false);
@@ -14,22 +15,25 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div className={`App__sidebar-wrapper ${modificator}`}>
-        <div className={`App__sidebar`}>
-          <Sidebar />
+    <TerminalsState>
+      <div className="App">
+        <div className={`App__sidebar-wrapper ${modificator}`}>
+          <div className={`App__sidebar`}>
+            <Sidebar />
+          </div>
+          <Hamburger toggleVisibility={toggleVisibility} />
         </div>
-        <Hamburger toggleVisibility={toggleVisibility} />
+
+        <main className="App__content">
+          <Switch>
+            <Route path="/terminals" render={() => <Terminals />} />
+            <Route exact path="/buyers/" render={() => <h1>Buyers</h1>} />
+            <Route path="/buyers/:id" render={() => <h1>concrete buyer</h1>} />
+          </Switch>
+        </main>
       </div>
 
-      <main className="App__content">
-        <Switch>
-          <Route path="/terminals" render={() => <Terminals />} />
-          <Route exact path="/buyers/" render={() => <h1>Buyers</h1>} />
-          <Route path="/buyers/:id" render={() => <h1>concrete buyer</h1>} />
-        </Switch>
-      </main>
-    </div>
+    </TerminalsState>
   );
 }
 

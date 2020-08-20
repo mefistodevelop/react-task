@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import './Terminals.scss';
 import { TerminalsTable } from './TerminalsTable';
-let terminalsData = [
-  { id: 1, name: 't1', description: 't1 descr' },
-  { id: 2, name: 't2', description: 't12descr' },
-  { id: 3, name: 't3', description: 't3 descr' },
-];
-window.terminals = terminalsData;
+import { useTerminals } from '../../state/TerminalsState';
+
 export function Terminals() {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
+  const { terminals, addTerminal } = useTerminals();
 
   const onSubmit = (e) => {
     e.preventDefault();
     if (name.trim() || description.trim()) {
-      const newTerminal = { name, description, id: terminalsData.length + 1 };
-      terminalsData.push(newTerminal);
+      const lastTerminal = terminals[terminals.length - 1];
+      const id = lastTerminal ? lastTerminal.id + 1 : 1;
+      const newTerminal = { id, name, description };
+
+      addTerminal(newTerminal);
       setName('');
       setDescription('');
     }
@@ -58,7 +58,7 @@ export function Terminals() {
       </form>
 
       <div className="terminals__table">
-        <TerminalsTable data={terminalsData} />
+        <TerminalsTable data={terminals} />
       </div>
     </div>
   );
