@@ -1,0 +1,43 @@
+.hidePagination {
+
+  >p,
+  >div {
+    font-size: 1.5rem;
+  }
+
+  >p:last-of-type,
+  >div:last-of-type {
+    display: none;
+  }
+}
+
+.toolbarFont {
+
+  >p {
+    display: none
+  }
+
+  >div,
+  span {
+    font-size: 1.5rem;
+  }
+
+  >div:last-of-type {
+    >span {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.MuiInput-input {
+  font-size: 1.5rem !important;
+}
+
+.table-link {
+  text-decoration: none;
+  color: #000;
+
+  &:hover {
+    color: rgba(0, 0, 0, .5)
+  }
+}
