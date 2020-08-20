@@ -8,12 +8,12 @@ export function Navigation() {
       <ul className="navigation__list">
         <li className="navigation__item">
           <Link className="navigation__link" to="/terminals">
-            Terminals
+            Терминалы
           </Link>
         </li>
         <li className="navigation__item">
           <Link className="navigation__link" to="/buyers">
-            Buyers
+            Покупатели
           </Link>
         </li>
       </ul>
