@@ -7,13 +7,14 @@
   height: 100%;
 
   background-color: #fff;
+  box-shadow: 3px 0 3px rgba(0, 0, 0, .1);
 
   &__avatar {
     padding-left: 2rem;
   }
 
   &__footer {
-    text-align: center;
+    padding-left: 18%;
   }
 }
 
