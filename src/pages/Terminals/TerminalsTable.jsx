@@ -53,10 +53,7 @@ export function TerminalsTable({ data }) {
                   className="table__button"
                   onClick={() => removeTerminal(row.id)}
                   title="Удалить"
-<<<<<<< HEAD
-                  aria-label="удалить теминал"
-=======
->>>>>>> b0ce9a118ec7f03eab7470f581981df35535a5d5
+                  aria-label="удалить терминал"
                 >
                   &times;
                 </button>
