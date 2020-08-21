@@ -1,8 +1,10 @@
+@import './utils/vars';
+
 .App {
   position: relative;
   display: flex;
   min-height: 100%;
-  background-color: lightgrey;
+  background-color: $background-color;
 
   &__sidebar-wrapper {
     display: flex;
@@ -20,9 +22,11 @@
       position: absolute;
       transform: translateX(-23rem);
       z-index: 11;
+      height: 5rem;
 
       &_visible {
         transform: translateX(0);
+        height: 100vh;
       }
     }
   }

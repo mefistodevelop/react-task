@@ -1,3 +1,5 @@
+@import '../../utils/vars';
+
 .login-page {
   position: relative;
   top: 50%;
@@ -9,7 +11,7 @@
   height: 35rem;
   background-color: #fff;
   border: 1px solid rgba(0,0,0,.12);
-  box-shadow: 0 0 25px rgba(0,0,0,.2);
+  box-shadow: $box-shadow;
   border-radius: 4px;
 
   &__title {
@@ -53,12 +55,12 @@
     }
 
     &_error {
-      border-color: #ef5350;
+      border-color: $danger;
     }
   }
 
   &__error-text {
-    color: #ef5350;
+    color: $danger;
   }
 
   &__button {

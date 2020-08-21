@@ -10,7 +10,7 @@ export function Buyers() {
    <>{!isAuthorized ? <Redirect to="/" />
     : (
       <div className="buyers">
-        <h1>Покупатели</h1>
+        <h1 className="buyers__title">Покупатели</h1>
         <div className="buyers__table">
           <BuyersTable />
         </div>

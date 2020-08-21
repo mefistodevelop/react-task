@@ -48,6 +48,7 @@ export function BuyersTable() {
         search: false,
         filtering: true,
         sorting: true,
+        toolbar: false,
         headerStyle: {
           fontSize: 15,
           textAlign: 'center',

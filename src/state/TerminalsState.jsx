@@ -8,9 +8,9 @@ const REMOVE_TERMINAL = 'REMOVE_TERMINAL';
 
 const initialState = {
   terminalsList: [
-    { id: 1, name: 't1', description: 't1 descr' },
-    { id: 2, name: 't2', description: 't12descr' },
-    { id: 3, name: 't3', description: 't3 descr' },
+    { id: 1, name: 'терминал 1', description: 'первый терминал' },
+    { id: 2, name: 'терминал 2', description: 'второй терминал' },
+    { id: 3, name: 'терминал 3', description: 'терминал после второго' },
   ],
 
 };
