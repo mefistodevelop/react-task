@@ -9,10 +9,15 @@ import { Buyers } from './pages/Buyers/Buyers';
 import { Buyer } from './pages/Buyer/Buyer';
 import { BuyersState } from './state/BuyersState';
 import { ErrorPage } from './pages/ErrorPage/ErrorPage';
+import { LoginPage } from './pages/LoginPage/LoginPage';
+import { useAppData } from './state/AppState';
 
 function App() {
   const [isSidebarVisible, setIsVisible] = useState(false);
+  const { isAuthorized } = useAppData();
+
   const modificator = isSidebarVisible ? 'App__sidebar-wrapper_visible' : '';
+  const hideSidebar = !isAuthorized ? 'App__sidebar-wrapper_hidden' : '';
 
   const toggleVisibility = () => {
     setIsVisible(!isSidebarVisible);
@@ -22,7 +27,7 @@ function App() {
     <TerminalsState>
       <BuyersState>
         <div className="App">
-          <div className={`App__sidebar-wrapper ${modificator}`}>
+          <div className={`App__sidebar-wrapper ${modificator} ${hideSidebar}`}>
             <div className={`App__sidebar`}>
               <Sidebar />
             </div>
@@ -31,6 +36,7 @@ function App() {
 
           <main className="App__content">
             <Switch>
+              <Route exact path="/" render={() => <LoginPage />} />
               <Route path="/terminals" render={() => <Terminals />} />
               <Route exact path="/buyers/" render={() => <Buyers />} />
               <Route path="/buyers/:id" render={() => <Buyer />} />
