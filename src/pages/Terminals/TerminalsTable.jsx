@@ -12,6 +12,7 @@ import { useTerminals } from '../../state/TerminalsState';
 const useStyles = makeStyles({
   cell: {
     fontSize: 15,
+    maxWidth: 100,
   },
 });
 
@@ -22,17 +23,17 @@ export function TerminalsTable({ data }) {
 
   return (
     <TableContainer component={Paper}>
-      <Table aria-label="simple table">
+      <Table aria-label="таблица терминалов">
         <TableHead>
           <TableRow>
             <TableCell className={classes.cell}>ID</TableCell>
-            <TableCell className={classes.cell} align="right">
+            <TableCell className={classes.cell} align="center">
               Название
             </TableCell>
-            <TableCell className={classes.cell} align="right">
+            <TableCell className={classes.cell} align="center">
               Описание
             </TableCell>
-            <TableCell className={classes.cell} align="right"></TableCell>
+            <TableCell className={classes.cell} align="center"></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -41,16 +42,17 @@ export function TerminalsTable({ data }) {
               <TableCell className={classes.cell} component="th" scope="row">
                 {row.id}
               </TableCell>
-              <TableCell className={classes.cell} align="right">
+              <TableCell className={classes.cell} align="center">
                 {row.name}
               </TableCell>
-              <TableCell className={classes.cell} align="right">
+              <TableCell className={classes.cell} align="center">
                 {row.description}
               </TableCell>
-              <TableCell className={classes.cell} align="right">
+              <TableCell className={classes.cell} align="center">
                 <button
                   className="table__button"
                   onClick={() => removeTerminal(row.id)}
+                  title="Удалить"
                 >
                   &times;
                 </button>

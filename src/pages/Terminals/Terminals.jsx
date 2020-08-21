@@ -31,7 +31,7 @@ export function Terminals() {
         <h1 className="terminals__title">Терминалы</h1>
         <form className="terminals__form" onSubmit={onSubmit}>
           <label className="terminals__label">
-            Название терминала
+            <span className="visually-hidden">Название терминала</span>
             <input
               type="text"
               className="terminals__field"
@@ -45,8 +45,8 @@ export function Terminals() {
           </label>
 
           <label className="terminals__label">
-            Описание
-            <textarea
+            <span className="visually-hidden">Описание</span>
+            <input
               type="text"
               className="terminals__field"
               placeholder="Описание терминала"
