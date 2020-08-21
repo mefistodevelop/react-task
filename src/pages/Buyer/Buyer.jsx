@@ -2,15 +2,17 @@ import React from 'react';
 import './Buyer.scss';
 import { useParams, Redirect } from 'react-router-dom';
 import { useBuyers } from '../../state/BuyersState';
+import { useAppData } from '../../state/AppState';
 
 export function Buyer() {
   const { id: buyerId } = useParams();
   const { getBuyer } = useBuyers();
+  const { isAuthorized } = useAppData();
 
   const buyerData = getBuyer(Number(buyerId))[0];
 
   return (
-    <>
+    <>{!isAuthorized ? <Redirect to="/" /> : ''}
       {!buyerData ? <Redirect to="/404" /> : 
         <div className="buyer">
           <h1 className="buyer__title">Покупатель #{buyerData.id}</h1>

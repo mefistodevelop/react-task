@@ -3,6 +3,7 @@ import './Sidebar.scss';
 import { Avatar } from '@material-ui/core';
 import { Navigation } from './Navigation/Navigation';
 import { makeStyles } from '@material-ui/core/styles';
+import { useAppData } from '../../state/AppState';
 
 const useStyles = makeStyles((theme) => ({
   large: {
@@ -16,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export function Sidebar() {
-  const link =
-    'https://vignette.wikia.nocookie.net/disney/images/7/74/Profile_-_Buzz_Lightyear.jpeg/revision/latest?cb=20190623020017';
+  const { avatar } = useAppData()
+  const link = avatar;
   const classes = useStyles();
 
   return (
