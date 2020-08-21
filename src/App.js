@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.scss';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { Sidebar } from './components/Sidebar/Sidebar';
 import { Hamburger } from './components/common/Hamburger/Hamburger';
 import { Terminals } from './pages/Terminals/Terminals';
@@ -34,7 +34,8 @@ function App() {
               <Route path="/terminals" render={() => <Terminals />} />
               <Route exact path="/buyers/" render={() => <Buyers />} />
               <Route path="/buyers/:id" render={() => <Buyer />} />
-              <Route path="*" render={() => <ErrorPage />} />
+              <Route path="/404" render={() => <ErrorPage />} />
+              <Redirect from="*" to="/404" />
             </Switch>
           </main>
         </div>
