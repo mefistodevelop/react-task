@@ -8,6 +8,7 @@ import { TerminalsState } from './state/TerminalsState';
 import { Buyers } from './pages/Buyers/Buyers';
 import { Buyer } from './pages/Buyer/Buyer';
 import { BuyersState } from './state/BuyersState';
+import { ErrorPage } from './pages/ErrorPage/ErrorPage';
 
 function App() {
   const [isSidebarVisible, setIsVisible] = useState(false);
@@ -33,6 +34,7 @@ function App() {
               <Route path="/terminals" render={() => <Terminals />} />
               <Route exact path="/buyers/" render={() => <Buyers />} />
               <Route path="/buyers/:id" render={() => <Buyer />} />
+              <Route path="/error" render={() => <ErrorPage />} />
             </Switch>
           </main>
         </div>
