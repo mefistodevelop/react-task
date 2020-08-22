@@ -19,50 +19,35 @@
     margin-bottom: 5rem;
     box-shadow: $box-shadow;
   }
-}
 
-
-.hidePagination {
-
-  >p,
-  >div {
-    font-size: 1.5rem;
+  &__table-link {
+    padding: 1rem;
+    text-decoration: none;
+    color: #000;
+  
+    &:hover {
+      color: rgba(0, 0, 0, .5)
+    }
   }
 
-  >p:last-of-type,
-  >div:last-of-type {
-    display: none;
-  }
-}
-
-.toolbarFont {
-
-  >p {
-    display: none
-  }
-
-  >div,
-  span {
-    font-size: 1.5rem;
-  }
-
-  >div:last-of-type {
-    >span {
+  &__table-toolbarFont {
+    >p {
+      display: none
+    }
+  
+    >div,
+    span {
       font-size: 1.5rem;
+    }
+  
+    >div:last-of-type {
+      >span {
+        font-size: 1.5rem;
+      }
     }
   }
 }
 
 .MuiInput-input {
   font-size: 1.5rem !important;
-}
-
-.table-link {
-  padding: 1rem;
-  text-decoration: none;
-  color: #000;
-
-  &:hover {
-    color: rgba(0, 0, 0, .5)
-  }
 }

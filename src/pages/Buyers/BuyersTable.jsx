@@ -18,7 +18,7 @@ export function BuyersTable() {
           filtering: false,
           sorting: false,
           render: (rowData) => (
-            <Link className="table-link" to={`/buyers/${rowData.id}`}>
+            <Link className="buyers__table-link" to={`/buyers/${rowData.id}`}>
               {rowData.id}
             </Link>
           ),
@@ -71,7 +71,7 @@ export function BuyersTable() {
           <TablePagination
             {...props}
             rowsPerPageOptions={[5, 10, 15]}
-            className="toolbarFont"
+            className="buyers__table-toolbarFont"
           />
         ),
       }}
