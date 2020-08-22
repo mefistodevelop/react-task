@@ -38,7 +38,7 @@ function App() {
             <Switch>
               <Route exact path="/" render={() => <LoginPage />} />
               <Route path="/terminals" render={() => <Terminals />} />
-              <Route exact path="/buyers/" render={() => <Buyers />} />
+              <Route exact path="/buyers" render={() => <Buyers />} />
               <Route path="/buyers/:id" render={() => <Buyer />} />
               <Route path="/404" render={() => <ErrorPage />} />
               <Redirect from="*" to="/404" />

@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { AppState } from './state/AppState';
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename="react-task">
     <AppState>
       <App />
     </AppState> 
