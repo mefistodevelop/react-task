@@ -53,6 +53,7 @@ export function LoginPage() {
             <h1 className="login-page__title">Войти</h1>
             <form className="login-page__form" onSubmit={formik.handleSubmit}>
               <label className="login-page__label">
+                <span className="visually-hidden">имя пользователя</span>
                 <input
                   className={`login-page__input ${formik.errors.login ? modificator : ''}`}
                   name="login"
@@ -68,6 +69,7 @@ export function LoginPage() {
               </label>
 
               <label className="login-page__label">
+                <span className="visually-hidden">пароль</span>
                 <input
                   className={`login-page__input ${formik.errors.password ? modificator : ''}`}
                   name="password"
